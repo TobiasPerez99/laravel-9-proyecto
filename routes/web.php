@@ -17,8 +17,19 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
 Route::resource('publicaciones','App\Http\Controllers\PublicacionesController');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('admin')->group(function () {
+
+    Route::resource('/dashboard', 'App\Http\Controllers\AdminController')->middleware('auth');
+
+    });
+
