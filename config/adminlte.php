@@ -259,6 +259,12 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
+        ['header' => 'PUBLICACIONES'],
+        [
+            'text' => 'Publicaciones',
+            'url'  => 'admin/admin/publicaciones',
+            'icon' => 'fas fa-fw fa-user',
+        ],
         [
             'text' => 'change_password',
             'url'  => 'admin/settings',

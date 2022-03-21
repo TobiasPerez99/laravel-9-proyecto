@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Publicaciones;
+use App\Models\Admin\Publicaciones;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PublicacionesController extends Controller
 {
@@ -14,9 +15,11 @@ class PublicacionesController extends Controller
      */
     public function index()
     {
-        $publicaciones = Publicaciones::all();
+        // $publicaciones = Publicaciones::all();
 
-        return view('publicaciones.index' , compact('publicaciones'));
+        // return view('publicaciones.index' , compact('publicaciones'));
+
+        return view('admin.publicaciones.index');
     }
 
     /**
@@ -26,7 +29,7 @@ class PublicacionesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.publicaciones.create');
     }
 
     /**
@@ -48,7 +51,7 @@ class PublicacionesController extends Controller
      */
     public function show(publicaciones $publicaciones)
     {
-        //
+        return view('admin.publicaciones.show');
     }
 
     /**
@@ -59,7 +62,7 @@ class PublicacionesController extends Controller
      */
     public function edit(publicaciones $publicaciones)
     {
-        //
+        return view('admin.publicaciones.edit');
     }
 
     /**
