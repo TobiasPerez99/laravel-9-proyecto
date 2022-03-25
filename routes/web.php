@@ -21,14 +21,16 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-// Route::resource('publicaciones','App\Http\Controllers\Admin\PublicacionesController');
+Route::resource('publicaciones','App\Http\Controllers\Admin\PublicacionesController');
+Route::get('getPublicaciones', [App\Http\Controllers\Admin\PublicacionesController::class, 'get']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
 
 Route::prefix('admin')->group(function () {
-
     Route::resource('/dashboard', 'App\Http\Controllers\AdminController')->middleware('auth');
-
 });
+
+// Route::get('datatable', [App\Http\Controllers\TestController::class, 'index']);
+

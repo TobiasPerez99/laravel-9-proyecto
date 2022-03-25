@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Admin\Publicaciones;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class PublicacionesController extends Controller
 {
@@ -15,11 +16,9 @@ class PublicacionesController extends Controller
      */
     public function index()
     {
-        // $publicaciones = Publicaciones::all();
-
-        // return view('publicaciones.index' , compact('publicaciones'));
-
-        return view('admin.publicaciones.index');
+        $publicaciones = Publicaciones::all();
+        // return datatables(User::query())->toJson();
+        return view('admin.publicaciones.index' , compact('publicaciones'));
     }
 
     /**
@@ -86,5 +85,9 @@ class PublicacionesController extends Controller
     public function destroy(publicaciones $publicaciones)
     {
         //
+    }
+
+    public function get(){
+        return datatables()->of(Publicaciones::query())->make(true);
     }
 }
