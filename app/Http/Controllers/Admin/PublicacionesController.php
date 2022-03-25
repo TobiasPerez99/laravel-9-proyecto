@@ -39,7 +39,9 @@ class PublicacionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        Publicaciones::create($request->all());
+
     }
 
     /**

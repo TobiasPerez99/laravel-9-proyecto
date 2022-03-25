@@ -9,4 +9,22 @@ class Publicaciones extends Model
 {
     use HasFactory;
 
+    //protected $fillable = ['modelo', 'año', 'dueños', 'consesionaria' , 'destacado', 'color' , 'marca', 'kilometros' , 'precio', 'motor', 'transmision', 'puertas', 'code'];
+
+    protected $fillable  =
+    [
+        'modelo',
+        'año',
+        'dueños',
+        'consesionaria',
+        'destacado',
+        'color',
+        'marca',
+        'kilometros',
+        'precio',
+        'motor',
+        'transmision',
+        'puertas',
+        'code',
+    ];
 }
